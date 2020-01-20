@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Students</title>
+  <!--link rel='stylesheet' href='stylesheets/bootstrap.min.css'-->
+</head>
+<body>
+  <h1>All Students</h1>
+ <br/><br/>
+  <ul>
+  <% students.forEach(function(student) {%>
+    <li>
+      <span><b>Naam : </b><%= student.naam %></span><br />
+      <span><b>Geboortedatum : </b><%= student.geboortedatum %></span><br />
+      <span><b>Studierichting : </b><%= student.studierichting %></span><br />
+    </li>
+  <% }) %>
+  </ul>
+  <br/>
+
+  <h2>Add a product</h2>
+  <br/><br/>
+  <form action='/students' method='POST'>
+   <table>
+     <tr><td>Naam : </td><td><input type='text' name='naam'></td></tr>
+     <tr><td>Geboortedatum : </td><td><input type='text' name='geboortedatum'></td></tr>
+     <tr><td>Studierichting : </td><td><input type='text' name='studierichting'></td></tr>
+     <tr><td><button type='submit'>Add</button></td></tr>
+   </table>
+  </form>
+</body>
+</html>
